@@ -640,13 +640,13 @@ function enrolResponseToCSV(responseSheet) {
     // ignore column names that aren't course titles
     // include columns that have enrol? checked
     const courses = cols.filter((col) => {
-      if (!col.match(/^(Timestamp|Name|Email Address)$/) && resp[col] === 'Enrol?') {
+      if (!col.match(/^(Timestamp|Name|Email address)$/) && resp[col] === 'Enrol?') {
         return true
       }
     })
     //if there are any courses add them to our result
     if (courses) {
-      acc.push([resp['Name'], resp['Email Address'], courses])
+      acc.push([resp['Name'], resp['Email address'], courses])
     }
     return acc
   }, [])
